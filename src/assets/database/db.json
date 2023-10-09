@@ -1,0 +1,124 @@
+{
+  "patients": [
+    {
+      "name": {
+        "first": "Kurt",
+        "last": "Mercier"
+      },
+      "dob": {
+        "date": "1975-07-08",
+        "age": 48
+      },
+      "phone": "078-484-4721",
+      "email": "kurt.mercier@example.com",
+      "gender": "male",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/90.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/90.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/90.jpg"
+      },
+      "appointments": {
+        "title": "",
+        "exam": "",
+        "dateOfExam": ""
+      },
+      "id": 1
+    },
+    {
+      "name": {
+        "first": "Curtis",
+        "last": "Sims"
+      },
+      "dob": {
+        "date": "1980-02-04",
+        "age": 43
+      },
+      "phone": "430-689-5662",
+      "email": "curtis.sims@example.com",
+      "gender": "male",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/92.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/92.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/92.jpg"
+      },
+      "appointments": {
+        "title": "",
+        "exam": "",
+        "dateOfExam": ""
+      },
+      "id": 2
+    },
+    {
+      "name": {
+        "first": "Elisabeth",
+        "last": "Guillaume"
+      },
+      "dob": {
+        "date": "1963-12-23",
+        "age": 59
+      },
+      "phone": "078-816-6710",
+      "email": "elisabeth.guillaume@example.com",
+      "gender": "female",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/33.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/33.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/33.jpg"
+      },
+      "appointments": {
+        "title": "",
+        "exam": "",
+        "dateOfExam": ""
+      },
+      "id": 3
+    },
+    {
+      "name": {
+        "first": "Eelis",
+        "last": "Juntunen"
+      },
+      "dob": {
+        "date": "1996-11-04",
+        "age": 26
+      },
+      "phone": "000-478-3077",
+      "email": "eelis.juntunen@example.com",
+      "gender": "male",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/94.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/94.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/94.jpg"
+      },
+      "appointments": {
+        "title": "",
+        "exam": "",
+        "dateOfExam": ""
+      },
+      "id": 4
+    },
+    {
+      "name": {
+        "first": "Marie",
+        "last": "Larsen"
+      },
+      "dob": {
+        "date": "1969-05-13",
+        "age": 54
+      },
+      "phone": "007-642-1432",
+      "email": "marie.larsen@example.com",
+      "gender": "female",
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/28.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/28.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/28.jpg"
+      },
+      "appointments": {
+        "title": "",
+        "exam": "",
+        "dateOfExam": ""
+      },
+      "id": 5
+    }
+  ]
+}
