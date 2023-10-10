@@ -155,7 +155,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 						slots={{ tool: GridToolbar }}
 						initialState={{
 							pagination: {
-								pageSize: 8,
+								paginationModel: { pageSize: 7 },
 							},
 						}}
 					/>

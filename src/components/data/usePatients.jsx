@@ -6,6 +6,7 @@ import {
 	deletePatients,
 	updatePatients,
 	addPatient,
+	addAppointments,
 } from "./APIhandler";
 import { formatDate, formatEnglishNameOnly, formatPhoneNumber } from "./format";
 
@@ -38,6 +39,19 @@ const usePatients = () => {
 	const handleAdd = async (newPatient) => {
 		const addedPatient = await addPatient(newPatient);
 		setPatients([...patients, addedPatient]);
+	};
+
+	const handleAddAppointment = async (id, newAppointment) => {
+		await addAppointments(id, newAppointment).then(() => {
+			const updateSchedule = patients.map((patient) => {
+				if (patient.id === id) {
+					return { ...patient, appointments: newAppointment };
+				} else {
+					return patient;
+				}
+			});
+			setPatients(updateSchedule);
+		});
 	};
 
 	const handleGenerated = async () => {
@@ -79,6 +93,7 @@ const usePatients = () => {
 		handleDelete,
 		handleUpdate,
 		handleAdd,
+		handleAddAppointment,
 	};
 };
 export default usePatients;

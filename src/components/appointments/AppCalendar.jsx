@@ -12,11 +12,11 @@ import {
 	Typography,
 	useTheme,
 } from "@mui/material";
-
 import { tokens } from "../../assets/theme/theme";
 import { Fragment } from "react";
+import AddApp from "./AddApp";
 
-const AppCalendar = ({ patients }) => {
+const AppCalendar = ({ patients, onAddApp }) => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
 
@@ -52,6 +52,7 @@ const AppCalendar = ({ patients }) => {
 					m='10px'
 					borderRadius='4px'
 					sx={{ backgroundImage: colors.gradients.secondary.state }}>
+					<AddApp patients={patients} onAddApp={onAddApp} />
 					<List>
 						{showAppointments.map((event, index) => (
 							<ListItem

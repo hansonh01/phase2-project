@@ -21,6 +21,12 @@ export const deletePatients = async ({ id }) => {
 	return await patientsApi.delete(`/patients/${id}`, id);
 };
 
+export const addAppointments = async (id, newAppointment) => {
+	return await patientsApi.patch(`/patients/${id}`, {
+		appointments: newAppointment,
+	});
+};
+
 export const generatePatient = async () => {
 	try {
 		const response = await axios.get("https://randomuser.me/api/", {});

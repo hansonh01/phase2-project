@@ -10,8 +10,14 @@ import HomePage from "./layouts/HomePage";
 
 function App() {
 	const [theme, colorMode] = useMode();
-	const { patients, handleGenerated, handleDelete, handleUpdate, handleAdd } =
-		usePatients();
+	const {
+		patients,
+		handleGenerated,
+		handleDelete,
+		handleUpdate,
+		handleAdd,
+		handleAddAppointment,
+	} = usePatients();
 
 	return (
 		<ColorModeContext.Provider value={colorMode}>
@@ -44,7 +50,10 @@ function App() {
 							<Route
 								path='/appointments'
 								element={
-									<AppointmentsPage patients={patients} />
+									<AppointmentsPage
+										patients={patients}
+										onAddApp={handleAddAppointment}
+									/>
 								}
 							/>
 						</Routes>
