@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import {
-	fetchDataBase,
-	generateRandomPatient,
-	saveRandomPatient,
-	deleteSeletectedPatient,
-	editSelectedPatient,
-	addNewPatient,
+	getPatients,
+	generatePatient,
+	storePatient,
+	deletePatients,
+	updatePatients,
+	addPatient,
 } from "./APIhandler";
 import { formatDate, formatEnglishNameOnly, formatPhoneNumber } from "./format";
 
@@ -13,16 +13,36 @@ const usePatients = () => {
 	const [patients, setPatients] = useState([]);
 
 	useEffect(() => {
-		fetchDataBase()
-			.then((data) => setPatients(data))
-			.catch((error) => {
-				throw error;
-			});
+		getPatients().then((data) => setPatients(data));
 	}, []);
 
-	const handleGeneratedPatient = async () => {
+	const handleDelete = async (id) => {
+		await deletePatients(id).then(() => {
+			const deletion = patients.filter((patient) => patient.id !== id);
+			setPatients(deletion);
+		});
+	};
+
+	const handleUpdate = async (id, updatedInfo) => {
+		const results = await updatePatients(id, updatedInfo);
+		const updates = patients.map((patient) => {
+			if (patient.id === id) {
+				return { ...patient, ...results.data };
+			} else {
+				return patient;
+			}
+		});
+		setPatients(updates);
+	};
+
+	const handleAdd = async (newPatient) => {
+		const addedPatient = await addPatient(newPatient);
+		setPatients([...patients, addedPatient]);
+	};
+
+	const handleGenerated = async () => {
 		try {
-			const results = await generateRandomPatient();
+			const results = await generatePatient();
 			const date = formatDate(results.dob.date);
 			const phone = formatPhoneNumber(results.phone);
 			const first = formatEnglishNameOnly(results.name.first);
@@ -43,50 +63,11 @@ const usePatients = () => {
 				appointments: {
 					title: "",
 					exam: "",
-					dateOfExam: "",
+					date: "",
 				},
 			};
-			await saveRandomPatient(newPatient);
+			await storePatient(newPatient);
 			setPatients([...patients, newPatient]);
-		} catch (error) {
-			throw error;
-		}
-	};
-
-	const handleDeletePatients = (id) => {
-		try {
-			const results = deleteSeletectedPatient(id);
-			const updatePatientsList = patients.filter(
-				(patient) => patient.id !== results.id
-			);
-			setPatients(updatePatientsList);
-		} catch (error) {
-			throw error;
-		}
-	};
-
-	const handleEditPatient = (id, updatedInfo) => {
-		try {
-			editSelectedPatient(id, updatedInfo).then(() => {
-				const updateList = patients.map((patient) => {
-					if (patient.id === id) {
-						return { ...patient, ...updatedInfo };
-					} else {
-						return patient;
-					}
-				});
-				setPatients(updateList);
-			});
-		} catch (error) {
-			throw error;
-		}
-	};
-
-	const handleAddNewPatient = (newPatient) => {
-		try {
-			addNewPatient(newPatient).then(() => {
-				setPatients([...patients, newPatient]);
-			});
 		} catch (error) {
 			throw error;
 		}
@@ -94,10 +75,10 @@ const usePatients = () => {
 
 	return {
 		patients,
-		handleGeneratedPatient,
-		handleDeletePatients,
-		handleEditPatient,
-		handleAddNewPatient,
+		handleGenerated,
+		handleDelete,
+		handleUpdate,
+		handleAdd,
 	};
 };
 export default usePatients;

@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import { Box, TextField, Select, Button, MenuItem } from "@mui/material";
 import { formatDate, calculateAge } from "../data/format";
 
-const EditPatients = ({ patient, onEdit, onClose }) => {
+const EditPatients = ({ patient, onClose, onUpdate }) => {
 	const [firstName, setFirstName] = useState(patient.name.first);
 	const [lastName, setLastName] = useState(patient.name.last);
 	const [birthday, setBirthday] = useState(patient.dob.date);
@@ -13,7 +13,6 @@ const EditPatients = ({ patient, onEdit, onClose }) => {
 	const handleOnSubmit = (e) => {
 		e.preventDefault();
 		const updatedInfo = {
-			id: patient.id,
 			name: {
 				first: firstName,
 				last: lastName,
@@ -26,7 +25,7 @@ const EditPatients = ({ patient, onEdit, onClose }) => {
 			email: email,
 			gender: gender,
 		};
-		onEdit(patient.id, updatedInfo);
+		onUpdate(patient.id, updatedInfo);
 		onClose();
 	};
 

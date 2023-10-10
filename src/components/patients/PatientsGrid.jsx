@@ -3,21 +3,23 @@ import { Box, IconButton, useTheme, Modal } from "@mui/material";
 import { Male, Female } from "@mui/icons-material";
 import { tokens } from "../../assets/theme/theme";
 import { Fragment, useState } from "react";
-import usePatients from "../data/usePatients";
 import EditPatients from "./EditPatients";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import EditIcon from "@mui/icons-material/Edit";
 
-const PatientsGrid = ({ patients }) => {
+const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
 	const [selectedPatient, setSelectedPatient] = useState("");
 
-	const { handleDeletePatients, handleEditPatient } = usePatients();
-
 	const [open, setOpen] = useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
+
+	const rowsWithIds = patients.map((patient, index) => ({
+		...patient,
+		id: index,
+	}));
 
 	const style = {
 		position: "absolute",
@@ -31,7 +33,7 @@ const PatientsGrid = ({ patients }) => {
 		p: 4,
 	};
 
-	const handleEditingPatient = (patient) => {
+	const handleEditing = (patient) => {
 		setSelectedPatient(patient);
 		handleOpen();
 	};
@@ -98,7 +100,7 @@ const PatientsGrid = ({ patients }) => {
 			headerName: "Edit",
 			flex: 0.5,
 			renderCell: (params) => (
-				<IconButton onClick={() => handleEditingPatient(params.row)}>
+				<IconButton onClick={() => handleEditing(params.row)}>
 					<EditIcon />
 				</IconButton>
 			),
@@ -108,7 +110,7 @@ const PatientsGrid = ({ patients }) => {
 			headerName: "Delete",
 			flex: 0.5,
 			renderCell: (params) => (
-				<IconButton onClick={() => handleDeletePatients(params.row.id)}>
+				<IconButton onClick={() => onDelete(params.row.id)}>
 					<PersonRemoveIcon />
 				</IconButton>
 			),
@@ -148,10 +150,7 @@ const PatientsGrid = ({ patients }) => {
 					}}>
 					<DataGrid
 						sx={{ paddingBottom: "20px" }}
-						rows={patients.map((patient) => ({
-							id: patient.id,
-							...patient,
-						}))}
+						rows={rowsWithIds}
 						columns={columns}
 						slots={{ tool: GridToolbar }}
 						initialState={{
@@ -165,7 +164,7 @@ const PatientsGrid = ({ patients }) => {
 					<Box sx={style}>
 						<EditPatients
 							patient={selectedPatient}
-							onEdit={handleEditPatient}
+							onUpdate={onUpdate}
 							onClose={handleClose}
 						/>
 					</Box>

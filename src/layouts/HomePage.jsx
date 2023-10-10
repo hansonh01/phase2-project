@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import Headers from "../components/headers/Headers";
 import AddButton from "../components/home/AddButton";
 
-const HomePage = () => {
+const HomePage = ({ onGenerated }) => {
 	return (
 		<Fragment>
 			<Box m='20px'>
@@ -12,7 +12,7 @@ const HomePage = () => {
 					subtitle='Welcome to my Project for Phase 2!!'
 				/>
 			</Box>
-			<AddButton />
+			<AddButton onGenerated={onGenerated} />
 		</Fragment>
 	);
 };

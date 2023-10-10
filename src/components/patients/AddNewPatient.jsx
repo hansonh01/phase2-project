@@ -10,13 +10,11 @@ import {
 import { formatDate, calculateAge } from "../data/format";
 import { Fragment, useState } from "react";
 import { tokens } from "../../assets/theme/theme";
-import usePatients from "../data/usePatients";
 import Headers from "../headers/Headers";
 
-const AddNewPatient = () => {
+const AddNewPatient = ({ onAdd }) => {
 	const theme = useTheme();
 	const colors = tokens(theme.palette.mode);
-	const { handleAddNewPatient } = usePatients();
 
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
@@ -42,7 +40,7 @@ const AddNewPatient = () => {
 			gender: gender,
 		};
 
-		handleAddNewPatient(newPatient);
+		onAdd(newPatient);
 	};
 
 	return (
