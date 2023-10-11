@@ -28,11 +28,7 @@ const Links = () => {
 				"& .:active": { color: "#6870fa !important" },
 			}}>
 			<IconButton onClick={colorMode.toggleColorMode}>
-				{theme.palette.mode === "dark" ? (
-					<DarkModeIcon />
-				) : (
-					<LightModeIcon />
-				)}
+				{theme.palette.mode === "dark" ? <DarkModeIcon /> : <LightModeIcon />}
 			</IconButton>
 			<NavLink to='/' style={linkStyles}>
 				<Typography variant='h4'>HOME</Typography>

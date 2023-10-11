@@ -25,6 +25,7 @@ const EditPatients = ({ patient, onClose, onUpdate }) => {
 			email: email,
 			gender: gender,
 		};
+		console.log(patient);
 		onUpdate(patient.id, updatedInfo);
 		onClose();
 	};

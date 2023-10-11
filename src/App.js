@@ -27,12 +27,7 @@ function App() {
 					<main className='content'>
 						<NavBar />
 						<Routes>
-							<Route
-								path='/'
-								element={
-									<HomePage onGenerated={handleGenerated} />
-								}
-							/>
+							<Route path='/' element={<HomePage onGenerated={handleGenerated} />} />
 							<Route
 								path='/patients'
 								element={

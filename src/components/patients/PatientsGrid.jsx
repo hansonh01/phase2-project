@@ -18,7 +18,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 
 	const rowsWithIds = patients.map((patient, index) => ({
 		...patient,
-		id: index,
+		id: index + 1,
 	}));
 
 	const style = {
@@ -39,7 +39,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 	};
 
 	const columns = [
-		{ field: "id", headerName: "ID", flex: 0.25 },
+		{ field: "id", headerName: "ID", flex: 0.5 },
 		{
 			field: "picture",
 			headerName: "Profile",
@@ -58,10 +58,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 			flex: 1,
 			renderCell: ({ row: { gender } }) => {
 				return (
-					<Box
-						display='flex'
-						justifyContent='center'
-						backgroundColor='transparent'>
+					<Box display='flex' justifyContent='center' backgroundColor='transparent'>
 						{gender === "male" && <Male />}
 						{gender === "female" && <Female />}
 					</Box>
@@ -73,8 +70,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 			headerName: "Name",
 			flex: 1,
 			cellClassName: "name-column-cell",
-			valueGetter: (params) =>
-				`${params.row.name.first} ${params.row.name.last}`,
+			valueGetter: (params) => `${params.row.name.first} ${params.row.name.last}`,
 		},
 		{
 			field: "dob",
@@ -155,7 +151,11 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 						slots={{ tool: GridToolbar }}
 						initialState={{
 							pagination: {
-								paginationModel: { pageSize: 7 },
+								paginationModel: {
+									pageSizeOptions: {
+										pageSize: 7,
+									},
+								},
 							},
 						}}
 					/>

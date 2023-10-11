@@ -2,16 +2,17 @@ import { Fragment } from "react";
 import { Box } from "@mui/material";
 import Headers from "../components/headers/Headers";
 import AddButton from "../components/home/AddButton";
+import Dashboard from "../components/home/Dashboard";
 
 const HomePage = ({ onGenerated }) => {
 	return (
 		<Fragment>
 			<Box m='20px'>
-				<Headers
-					title='PHASE 2'
-					subtitle='Welcome to my Project for Phase 2!!'
-				/>
+				<Box display='flex' justifyContent='space-between' alignItems='center'>
+					<Headers title='PHASE 2' subtitle='Welcome to my Project for Phase 2!!' />
+				</Box>
 			</Box>
+			<Dashboard />
 			<AddButton onGenerated={onGenerated} />
 		</Fragment>
 	);
