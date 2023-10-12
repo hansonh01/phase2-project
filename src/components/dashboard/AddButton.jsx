@@ -3,8 +3,11 @@ import AddIcon from "@mui/icons-material/Add";
 
 const AddButon = ({ onGenerated }) => {
 	return (
-		<Box onClick={onGenerated} mt='40vh' p={2}>
-			<Fab color='primary' variant='extended'>
+		<Box onClick={onGenerated} p={2}>
+			<Fab
+				color='primary'
+				variant='extended'
+				sx={{ position: "fixed", bottom: "20px", left: "20px" }}>
 				<AddIcon />
 			</Fab>
 		</Box>

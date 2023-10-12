@@ -1,12 +1,4 @@
-import {
-	useTheme,
-	Box,
-	AppBar,
-	Toolbar,
-	Icon,
-	Typography,
-	styled,
-} from "@mui/material";
+import { useTheme, Box, AppBar, Toolbar, Icon, Typography, styled } from "@mui/material";
 import { Fragment } from "react";
 import { tokens } from "../../assets/theme/theme";
 import Links from "./Links";
@@ -32,10 +24,7 @@ const NavBar = () => {
 						<Icon>
 							<VisibilityIcon />
 						</Icon>
-						<Typography
-							variant='h1'
-							color={colors.grey[100]}
-							fontWeight='bold'>
+						<Typography variant='h1' color={colors.grey[100]} fontWeight='bold'>
 							EHR
 						</Typography>
 						<Links />
