@@ -39,10 +39,10 @@ const MessageBoard = () => {
 						color: colors.text.main,
 					}}>
 					<Typography variant='h7'>
-						Its Vision Monday and 20/20 Magazine are hosting the 15th annual EyeVote
+						[Its Vision Monday and 20/20 Magazine are hosting the 15th annual EyeVote
 						Readers' Choice Awards to identify the optical industry's favorite products
 						and companies this year. Don't forget to cast your vote for Eyefinity before
-						nominations end on October 25, 2023.
+						nominations end on October 25, 2023.]-Example Message
 					</Typography>
 				</Alert>
 				<Alert

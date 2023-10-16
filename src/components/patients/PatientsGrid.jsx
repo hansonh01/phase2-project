@@ -4,6 +4,7 @@ import { Male, Female } from "@mui/icons-material";
 import { tokens } from "../../assets/theme/theme";
 import { Fragment, useState } from "react";
 import EditPatients from "./EditPatients";
+import PatientsProfile from "./profile/PatientsProfile";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import EditIcon from "@mui/icons-material/Edit";
 
