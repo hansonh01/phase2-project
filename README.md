@@ -1,5 +1,7 @@
 # EHR - Phase 2 Project
 
+!["Flatiron Phase 2 - Project"][src/assets/images/Screenshot 2023-10-16 at 11.59.25 AM.png]
+
 ## Learning Goals
 
 - Build a React single page application from scratch
