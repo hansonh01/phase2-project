@@ -1,6 +1,7 @@
 # EHR - Phase 2 Project
 
-!["Flatiron Phase 2 - Project"][src/assets/images/Screenshot 2023-10-16 at 11.59.25 AM.png]
+![Flatiron - Phase 2 Project](src/assets/images/Screenshot%202023-10-16%20at%2011.59.25%20AM.png)
+
 
 ## Learning Goals
 
