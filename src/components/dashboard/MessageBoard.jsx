@@ -1,5 +1,8 @@
-import { Stack, Box, Alert, Card, useTheme, Typography } from "@mui/material";
+import { Stack, Alert, Card, useTheme, Typography } from "@mui/material";
 import { tokens } from "../../assets/theme/theme";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import WarningIcon from "@mui/icons-material/Warning";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
 
 const MessageBoard = () => {
 	const theme = useTheme();
@@ -26,8 +29,10 @@ const MessageBoard = () => {
 					severity='info'
 					sx={{
 						bgcolor: colors.badgeColors.info.text,
-						color: colors.text.main,
-					}}>
+						color:
+							theme.palette.mode === "dark" ? colors.text.main : colors.light.focus,
+					}}
+					icon={<InfoOutlined sx={{ color: colors.black.focus }} />}>
 					<Typography variant='h7'>
 						P2-EHR Practice Management 1.01 Unreleased 2023
 					</Typography>
@@ -36,8 +41,10 @@ const MessageBoard = () => {
 					severity='warning'
 					sx={{
 						bgcolor: colors.badgeColors.warning.text,
-						color: colors.text.main,
-					}}>
+						color:
+							theme.palette.mode === "dark" ? colors.text.main : colors.light.focus,
+					}}
+					icon={<WarningIcon sx={{ color: colors.black.focus }} />}>
 					<Typography variant='h7'>
 						[Its Vision Monday and 20/20 Magazine are hosting the 15th annual EyeVote
 						Readers' Choice Awards to identify the optical industry's favorite products
@@ -49,8 +56,10 @@ const MessageBoard = () => {
 					severity='error'
 					sx={{
 						bgcolor: colors.socialMediaColors.pinterest.main,
-						color: colors.text.main,
-					}}>
+						color:
+							theme.palette.mode === "dark" ? colors.text.main : colors.light.focus,
+					}}
+					icon={<WarningIcon sx={{ color: colors.black.focus }} />}>
 					<Typography variant='h7'>
 						This Electronic Health Records (EHR) program is designed exclusively for
 						educational purposes and is not intended for real-world, clinical, or
@@ -64,8 +73,10 @@ const MessageBoard = () => {
 					severity='success'
 					sx={{
 						bgcolor: colors.badgeColors.success.text,
-						color: colors.text.main,
-					}}>
+						color:
+							theme.palette.mode === "dark" ? colors.text.main : colors.light.focus,
+					}}
+					icon={<CheckCircleIcon sx={{ color: colors.black.focus }} />}>
 					<Typography variant='h7'>THANK YOU FOR VISITING!</Typography>
 				</Alert>
 			</Stack>
