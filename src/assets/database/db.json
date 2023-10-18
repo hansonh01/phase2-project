@@ -6,7 +6,7 @@
         "last": "Mercier"
       },
       "dob": {
-        "date": "1975-06-30",
+        "date": "1975-06-28",
         "age": 48
       },
       "phone": "078-484-4721",
@@ -282,9 +282,9 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/69.jpg"
       },
       "appointments": {
-        "title": "",
-        "exam": "",
-        "date": ""
+        "exam": "Vision Exam",
+        "title": "Vision Exam for Carter",
+        "date": "2023-10-18 21:00"
       },
       "id": 12
     },

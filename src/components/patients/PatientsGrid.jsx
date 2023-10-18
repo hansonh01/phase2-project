@@ -163,7 +163,7 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 						}}
 					/>
 				</Box>
-				<Modal open={open}>
+				<Modal open={open} onClose={handleClose}>
 					<Box sx={style}>
 						<EditPatients
 							patient={selectedPatient}
