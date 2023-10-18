@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import usePatients from "./components/data/usePatients";
 import AddNewPatient from "./components/patients/AddNewPatient";
 import PatientsPage from "./layouts/PatientsPage";
+import PatientsProfile from "./components/patients/profile/PatientsProfile";
 import AppointmentsPage from "./layouts/AppointmentsPage";
 import NavBar from "./components/navBar/NavBar";
 import HomePage from "./layouts/HomePage";
@@ -41,6 +42,10 @@ function App() {
 							<Route
 								path='/patients/new'
 								element={<AddNewPatient onAdd={handleAdd} />}
+							/>
+							<Route
+								path='/patients/:id'
+								element={<PatientsProfile patients={patients} />}
 							/>
 							<Route
 								path='/appointments'

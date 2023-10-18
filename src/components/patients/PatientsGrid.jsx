@@ -3,6 +3,7 @@ import { Box, IconButton, useTheme, Modal } from "@mui/material";
 import { Male, Female } from "@mui/icons-material";
 import { tokens } from "../../assets/theme/theme";
 import { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 import EditPatients from "./EditPatients";
 import PersonRemoveIcon from "@mui/icons-material/PersonRemove";
 import EditIcon from "@mui/icons-material/Edit";
@@ -45,11 +46,13 @@ const PatientsGrid = ({ patients, onDelete, onUpdate }) => {
 			headerName: "Profile",
 			flex: 1,
 			renderCell: (params) => (
-				<img
-					src={params.row.picture.thumbnail}
-					alt='Thumbnail'
-					style={{ width: 50, height: 50 }}
-				/>
+				<Link to={`/patients/${params.row.id}`}>
+					<img
+						src={params.row.picture.thumbnail}
+						alt='Thumbnail'
+						style={{ width: 50, height: 50 }}
+					/>
+				</Link>
 			),
 		},
 		{
