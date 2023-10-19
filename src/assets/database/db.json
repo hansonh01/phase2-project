@@ -354,9 +354,9 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/45.jpg"
       },
       "appointments": {
-        "title": "",
-        "exam": "",
-        "date": ""
+        "exam": "Vision Exam",
+        "title": "Vision Exam for Pervushko",
+        "date": "2023-10-18 17:00"
       },
       "id": 15
     },
