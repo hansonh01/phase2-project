@@ -6,7 +6,7 @@
         "last": "Mercier"
       },
       "dob": {
-        "date": "1975-06-28",
+        "date": "1975-06-24",
         "age": 48
       },
       "phone": "078-484-4721",
@@ -234,9 +234,9 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/43.jpg"
       },
       "appointments": {
-        "title": "",
-        "exam": "",
-        "date": ""
+        "exam": "Vision Exam",
+        "title": "Vision Exam for Bradley",
+        "date": "2023-10-19 19:00"
       },
       "id": 10
     },
